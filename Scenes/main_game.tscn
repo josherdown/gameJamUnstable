@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://xm1vi2lxyw05"]
 
 [ext_resource type="PackedScene" uid="uid://cpv446kvwxyh4" path="res://Scenes/Levels/level_1.tscn" id="1_0e3vx"]
-[ext_resource type="PackedScene" uid="uid://d0munbfd5mcsy" path="res://Scenes/base_player.tscn" id="1_l756w"]
+[ext_resource type="PackedScene" uid="uid://d0munbfd5mcsy" path="res://Scenes/Characters/base_player.tscn" id="1_l756w"]
 [ext_resource type="Texture2D" uid="uid://d0u70b3rwc7i4" path="res://Assets/icon.svg" id="2_pu3va"]
+[ext_resource type="PackedScene" uid="uid://cc15ckhabox73" path="res://Scenes/Enemies/base_enemy.tscn" id="4_6j5ir"]
 
 [node name="mainGame" type="Node2D" unique_id=588352447]
 
@@ -20,3 +21,6 @@ zoom = Vector2(3, 3)
 position = Vector2(59.000004, 13)
 scale = Vector2(0.3671875, 0.328125)
 texture = ExtResource("2_pu3va")
+
+[node name="base_enemy" parent="." unique_id=1133417226 instance=ExtResource("4_6j5ir")]
+position = Vector2(-57, 0)
