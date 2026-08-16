@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dco31sxv6segs"]
 
+[ext_resource type="Script" uid="uid://csb2fa7piling" path="res://Scripts/pause_menu.gd" id="1_8rf44"]
 [ext_resource type="Texture2D" uid="uid://fv3i7vnhyxxy" path="res://Assets/UI/Screenshot 2026-08-13 230733.png" id="1_rrvs5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8rf44"]
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8rf44")
 
 [node name="BG" type="Panel" parent="." unique_id=1762117954]
 layout_mode = 1
@@ -65,3 +67,8 @@ text = "main menu"
 layout_mode = 2
 text = "quit
 "
+
+[connection signal="pressed" from="VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/mainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]
