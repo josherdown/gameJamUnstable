@@ -23,3 +23,17 @@ func _physics_process(delta: float) -> void:
 		velocity.y = 0	
 
 	move_and_slide()
+	
+	
+	
+
+#extends CharacterBody2D
+#
+#var direction: Vector2
+#var speed := 100
+#
+#func _physics_process(delta: float) -> void:
+	#direction = Input.get_vector('left','right','up','down')
+	#velocity = direction * speed
+	#animation()
+	#move_and_slide()
