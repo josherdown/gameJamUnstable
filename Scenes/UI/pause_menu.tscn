@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://dco31sxv6segs"]
+
+[ext_resource type="Texture2D" uid="uid://fv3i7vnhyxxy" path="res://Assets/UI/Screenshot 2026-08-13 230733.png" id="1_rrvs5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8rf44"]
+texture = ExtResource("1_rrvs5")
+modulate_color = Color(1, 0, 0, 1)
+
+[node name="PauseMenu" type="Control" unique_id=1260419246]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="Panel" parent="." unique_id=1762117954]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8rf44")
+
+[node name="Panel" type="Panel" parent="." unique_id=826333658]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=534860486]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="gamePaused" type="Label" parent="VBoxContainer" unique_id=571407040]
+layout_mode = 2
+text = "game paused"
+
+[node name="resume" type="Button" parent="VBoxContainer" unique_id=420556197]
+layout_mode = 2
+text = "resume"
+
+[node name="settings" type="Button" parent="VBoxContainer" unique_id=290838256]
+layout_mode = 2
+text = "settings"
+
+[node name="mainMenu" type="Button" parent="VBoxContainer" unique_id=1703330230]
+layout_mode = 2
+text = "main menu"
+
+[node name="quit" type="Button" parent="VBoxContainer" unique_id=2022391042]
+layout_mode = 2
+text = "quit
+"

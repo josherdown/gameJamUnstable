@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d0munbfd5mcsy"]
 
-[ext_resource type="Texture2D" uid="uid://dpuir5yjqti60" path="res://Assets/Sprites/player_spritesheet.png" id="1_h2iv4"]
+[ext_resource type="Texture2D" uid="uid://dpuir5yjqti60" path="res://Assets/Sprites/CharacterSprites/player_spritesheet.png" id="1_h2iv4"]
 [ext_resource type="Script" uid="uid://b0se86vygbk7v" path="res://Scripts/base_player_movement.gd" id="1_ufpyv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ufpyv"]
@@ -43,7 +43,8 @@ script = ExtResource("1_ufpyv")
 
 [node name="AnimationPlayer" type="AnimatedSprite2D" parent="." unique_id=358829851]
 sprite_frames = SubResource("SpriteFrames_ahg1b")
-frame_progress = 0.45136237
+frame = 2
+frame_progress = 0.13618906
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=339178910]
 shape = SubResource("RectangleShape2D_ahg1b")

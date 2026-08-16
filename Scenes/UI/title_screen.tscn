@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://c1gytp38wc5i6"]
+
+[ext_resource type="Texture2D" uid="uid://fv3i7vnhyxxy" path="res://Assets/UI/Screenshot 2026-08-13 230733.png" id="1_klylv"]
+[ext_resource type="Script" uid="uid://bj8fdd6ve3nt0" path="res://Scripts/title_screen.gd" id="1_p3fck"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3pqe4"]
+texture = ExtResource("1_klylv")
+modulate_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_3pqe4"]
+font_names = PackedStringArray("Papyrus")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3pqe4"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tglc7"]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62dcu"]
+bg_color = Color(0.89, 0.89, 0.89, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="TitleScreen" type="Control" unique_id=720684340]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p3fck")
+
+[node name="BG" type="Panel" parent="." unique_id=778243771]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_3pqe4")
+
+[node name="Title" type="Label" parent="." unique_id=1845818522]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -409.0
+offset_right = 409.0
+offset_bottom = 523.0
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("SystemFont_3pqe4")
+theme_override_font_sizes/font_size = 74
+text = "unstable smp coincoctions"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Menu" type="VBoxContainer" parent="." unique_id=1083847056]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -158.0
+offset_top = -350.0
+offset_right = 158.0
+offset_bottom = -119.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Play" type="Button" parent="Menu" unique_id=1561493542]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_3pqe4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tglc7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_62dcu")
+text = "play"
+autowrap_trim_flags = 0
+
+[node name="Settings" type="Button" parent="Menu" unique_id=2118286101]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_3pqe4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tglc7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_62dcu")
+text = "settings"
+autowrap_trim_flags = 0
+
+[node name="Quit" type="Button" parent="Menu" unique_id=823694191]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_3pqe4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tglc7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_62dcu")
+text = "quit
+"
+autowrap_trim_flags = 0
+
+[connection signal="pressed" from="Menu/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Menu/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Menu/Quit" to="." method="_on_quit_pressed"]
