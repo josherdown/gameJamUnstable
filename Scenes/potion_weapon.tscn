@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://gofe4noin6ss"]
+
+[ext_resource type="Script" uid="uid://bgqc51ip1xyv7" path="res://Scripts/player/potionAim.gd" id="1_jus7a"]
+[ext_resource type="Texture2D" uid="uid://b2orsjdv3imfb" path="res://Assets/Sprites/WeaponSprites/Potion.png" id="2_tr40d"]
+
+[node name="PotionWeapon" type="Node2D" unique_id=1505659496]
+z_index = 11
+script = ExtResource("1_jus7a")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=631325736]
+scale = Vector2(0.6333333, 0.54761904)
+texture = ExtResource("2_tr40d")

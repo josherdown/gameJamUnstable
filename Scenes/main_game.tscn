@@ -2,14 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://cpv446kvwxyh4" path="res://Scenes/Levels/level_1.tscn" id="1_0e3vx"]
 [ext_resource type="PackedScene" uid="uid://d0munbfd5mcsy" path="res://Scenes/Characters/base_player.tscn" id="1_l756w"]
-[ext_resource type="Texture2D" uid="uid://d0u70b3rwc7i4" path="res://Assets/icon.svg" id="2_pu3va"]
 [ext_resource type="PackedScene" uid="uid://cc15ckhabox73" path="res://Scenes/Enemies/base_enemy.tscn" id="4_6j5ir"]
 [ext_resource type="PackedScene" uid="uid://bbdkdpki1co3b" path="res://Scenes/Enemies/enemy_wobbler_temp.tscn" id="5_mgc0q"]
 
 [node name="mainGame" type="Node2D" unique_id=588352447]
 
 [node name="Level1" parent="." unique_id=1692405795 instance=ExtResource("1_0e3vx")]
-visible = false
 position = Vector2(59.000004, 13)
 scale = Vector2(0.3671875, 0.328125)
 
