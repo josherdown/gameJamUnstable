@@ -16,10 +16,7 @@ scale = Vector2(0.3671875, 0.328125)
 [node name="Camera2D" type="Camera2D" parent="basePlayer" unique_id=1950753822]
 zoom = Vector2(3, 3)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1200838678]
-position = Vector2(59.000004, 13)
-scale = Vector2(0.3671875, 0.328125)
-texture = ExtResource("2_pu3va")
+
 
 [node name="Enemies" type="Node2D" parent="." unique_id=421082634]
 
