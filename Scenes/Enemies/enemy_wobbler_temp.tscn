@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://bbdkdpki1co3b"]
+
+[ext_resource type="Texture2D" uid="uid://dkvttx24tj3he" path="res://Assets/Sprites/EnemySprites/temp_wobbler_sheet.png" id="1_fpq7u"]
+[ext_resource type="PackedScene" uid="uid://brdkd7p1bkc23" path="res://Scenes/Components/health_component.tscn" id="2_1f5j0"]
+[ext_resource type="PackedScene" uid="uid://dfqn72ufwrmr4" path="res://Scenes/Components/hurtbox_component.tscn" id="3_yo7xb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idhhb"]
+atlas = ExtResource("1_fpq7u")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1f5j0"]
+atlas = ExtResource("1_fpq7u")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yo7xb"]
+atlas = ExtResource("1_fpq7u")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkfgx"]
+atlas = ExtResource("1_fpq7u")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mep0"]
+atlas = ExtResource("1_fpq7u")
+region = Rect2(128, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3pqe4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idhhb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1f5j0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yo7xb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkfgx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mep0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkfgx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yo7xb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1f5j0")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tglc7"]
+radius = 4.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tglc7"]
+radius = 13.0
+height = 32.0
+
+[node name="enemy_wobbler_temp" type="CharacterBody2D" unique_id=198981560]
+y_sort_enabled = true
+collision_layer = 2
+collision_mask = 22
+
+[node name="Animations" type="AnimatedSprite2D" parent="." unique_id=532380605]
+sprite_frames = SubResource("SpriteFrames_3pqe4")
+animation = &"move"
+autoplay = "move"
+frame = 5
+frame_progress = 0.43894365
+
+[node name="Hitbox" type="CollisionShape2D" parent="." unique_id=1313557787]
+shape = SubResource("CircleShape2D_tglc7")
+
+[node name="Components" type="Node" parent="." unique_id=792333216]
+
+[node name="HealthComponent" parent="Components" unique_id=753096552 instance=ExtResource("2_1f5j0")]
+
+[node name="HurtboxComponent" parent="Components" unique_id=296546325 instance=ExtResource("3_yo7xb")]
+
+[node name="Hurtbox" type="CollisionShape2D" parent="Components/HurtboxComponent" unique_id=450825858]
+shape = SubResource("CapsuleShape2D_tglc7")

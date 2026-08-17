@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cc15ckhabox73"]
 
 [ext_resource type="Texture2D" uid="uid://d0y4bj3t46ado" path="res://Assets/Sprites/EnemySprites/placeholder_base_enemy_sheet.png" id="1_hkymu"]
+[ext_resource type="PackedScene" uid="uid://brdkd7p1bkc23" path="res://Scenes/Components/health_component.tscn" id="2_oof5d"]
+[ext_resource type="PackedScene" uid="uid://dfqn72ufwrmr4" path="res://Scenes/Components/hurtbox_component.tscn" id="3_t83mw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b3u8b"]
 atlas = ExtResource("1_hkymu")
@@ -27,13 +29,28 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_tglc7"]
 radius = 1.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3pqe4"]
+radius = 6.0
+height = 16.0
+
 [node name="base_enemy" type="CharacterBody2D" unique_id=1133417226]
+y_sort_enabled = true
 collision_layer = 2
-collision_mask = 2
+collision_mask = 22
 
 [node name="base_enemy_animations" type="AnimatedSprite2D" parent="." unique_id=701058808]
 sprite_frames = SubResource("SpriteFrames_3pqe4")
 autoplay = "default"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1261161102]
+[node name="base_enemy_hitbox" type="CollisionShape2D" parent="." unique_id=1261161102]
 shape = SubResource("CircleShape2D_tglc7")
+
+[node name="Components" type="Node" parent="." unique_id=1489292290]
+
+[node name="HealthComponent" parent="Components" unique_id=753096552 instance=ExtResource("2_oof5d")]
+
+[node name="HurtboxComponent" parent="Components" unique_id=296546325 node_paths=PackedStringArray("healthComponent") instance=ExtResource("3_t83mw")]
+healthComponent = NodePath("../HealthComponent")
+
+[node name="Hurtbox" type="CollisionShape2D" parent="Components/HurtboxComponent" unique_id=959666751]
+shape = SubResource("CapsuleShape2D_3pqe4")

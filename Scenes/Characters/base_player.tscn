@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://cfqx242af30d7" path="res://Scripts/player/States/Idle.gd" id="3_2eps5"]
 [ext_resource type="Script" uid="uid://ce5x4w8we3kad" path="res://Scripts/player/StateMachine.gd" id="3_e1w4v"]
 [ext_resource type="Script" uid="uid://8pvpkuchis7d" path="res://Scripts/player/States/Run.gd" id="4_rlv28"]
+[ext_resource type="PackedScene" uid="uid://brdkd7p1bkc23" path="res://Scenes/Components/health_component.tscn" id="6_620w7"]
+[ext_resource type="PackedScene" uid="uid://dfqn72ufwrmr4" path="res://Scenes/Components/hurtbox_component.tscn" id="7_u8vnh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2eps5"]
 atlas = ExtResource("2_ufpyv")
@@ -115,18 +117,24 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahg1b"]
-size = Vector2(13.5, 12.5)
+[sub_resource type="CircleShape2D" id="CircleShape2D_3pqe4"]
+radius = 2.236068
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3pqe4"]
+radius = 6.0
+height = 16.0
 
 [node name="basePlayer" type="CharacterBody2D" unique_id=547233531]
+y_sort_enabled = true
+collision_mask = 25
 script = ExtResource("1_ufpyv")
 
 [node name="basePlayerAnimations" type="AnimatedSprite2D" parent="." unique_id=358829851]
 sprite_frames = SubResource("SpriteFrames_ahg1b")
 animation = &"Idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=339178910]
-shape = SubResource("RectangleShape2D_ahg1b")
+[node name="playerHitbox" type="CollisionShape2D" parent="." unique_id=339178910]
+shape = SubResource("CircleShape2D_3pqe4")
 
 [node name="StateMachine" type="Node" parent="." unique_id=601273616 node_paths=PackedStringArray("startingState")]
 script = ExtResource("3_e1w4v")
@@ -140,5 +148,14 @@ runState = NodePath("../Run")
 script = ExtResource("4_rlv28")
 idleState = NodePath("../Idle")
 metadata/_custom_type_script = "uid://bnn1jes0hbbhc"
+
+[node name="Components" type="Node" parent="." unique_id=437757876]
+
+[node name="HealthComponent" parent="Components" unique_id=753096552 instance=ExtResource("6_620w7")]
+
+[node name="HurtboxComponent" parent="Components" unique_id=296546325 instance=ExtResource("7_u8vnh")]
+
+[node name="Hurtbox" type="CollisionShape2D" parent="Components/HurtboxComponent" unique_id=216987383]
+shape = SubResource("CapsuleShape2D_3pqe4")
 
 [connection signal="animation_finished" from="basePlayerAnimations" to="." method="_on_base_player_animations_animation_finished"]

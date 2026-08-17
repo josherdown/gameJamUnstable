@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d0munbfd5mcsy" path="res://Scenes/Characters/base_player.tscn" id="1_l756w"]
 [ext_resource type="Texture2D" uid="uid://d0u70b3rwc7i4" path="res://Assets/icon.svg" id="2_pu3va"]
 [ext_resource type="PackedScene" uid="uid://cc15ckhabox73" path="res://Scenes/Enemies/base_enemy.tscn" id="4_6j5ir"]
+[ext_resource type="PackedScene" uid="uid://bbdkdpki1co3b" path="res://Scenes/Enemies/enemy_wobbler_temp.tscn" id="5_mgc0q"]
 
 [node name="mainGame" type="Node2D" unique_id=588352447]
 
@@ -22,5 +23,10 @@ position = Vector2(59.000004, 13)
 scale = Vector2(0.3671875, 0.328125)
 texture = ExtResource("2_pu3va")
 
-[node name="base_enemy" parent="." unique_id=1133417226 instance=ExtResource("4_6j5ir")]
+[node name="Enemies" type="Node2D" parent="." unique_id=421082634]
+
+[node name="base_enemy" parent="Enemies" unique_id=1133417226 instance=ExtResource("4_6j5ir")]
 position = Vector2(-57, 0)
+
+[node name="enemy_wobbler_temp" parent="Enemies" unique_id=198981560 instance=ExtResource("5_mgc0q")]
+position = Vector2(-88, 0)
