@@ -17,10 +17,5 @@ y_sort_enabled = true
 [node name="Camera2D" type="Camera2D" parent="basePlayer" unique_id=1950753822]
 zoom = Vector2(3, 3)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1200838678]
-position = Vector2(59.000004, 13)
-scale = Vector2(0.3671875, 0.328125)
-texture = ExtResource("2_pu3va")
-
 [node name="base_enemy" parent="." unique_id=1133417226 instance=ExtResource("4_6j5ir")]
-position = Vector2(-57, 0)
+position = Vector2(25, -6)

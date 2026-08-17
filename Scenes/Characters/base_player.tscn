@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://d0munbfd5mcsy"]
 
 [ext_resource type="Script" uid="uid://chnkicquhcwjt" path="res://Scripts/player/base_player.gd" id="1_ufpyv"]
-[ext_resource type="PackedScene" uid="uid://gofe4noin6ss" path="res://Scenes/Characters/potion_weapon.tscn" id="2_cs65t"]
+[ext_resource type="PackedScene" uid="uid://gofe4noin6ss" path="res://Scenes/potion_weapon.tscn" id="2_cs65t"]
 [ext_resource type="Texture2D" uid="uid://2ugo5lrxissu" path="res://Assets/Sprites/CharacterSprites/placeholder_base_player_sheet.png" id="2_ufpyv"]
 [ext_resource type="Script" uid="uid://cfqx242af30d7" path="res://Scripts/player/States/Idle.gd" id="3_2eps5"]
+[ext_resource type="PackedScene" uid="uid://diovcen13ugbx" path="res://Scenes/potion_projectile.tscn" id="3_620w7"]
 [ext_resource type="Script" uid="uid://ce5x4w8we3kad" path="res://Scripts/player/StateMachine.gd" id="3_e1w4v"]
 [ext_resource type="Script" uid="uid://8pvpkuchis7d" path="res://Scripts/player/States/Run.gd" id="4_rlv28"]
 
@@ -122,7 +123,11 @@ size = Vector2(13.5, 12.5)
 [node name="basePlayer" type="CharacterBody2D" unique_id=547233531]
 script = ExtResource("1_ufpyv")
 
-[node name="PotionWeapon" parent="." unique_id=418818799 instance=ExtResource("2_cs65t")]
+[node name="PotionWeapon" parent="." unique_id=1505659496 instance=ExtResource("2_cs65t")]
+
+[node name="PotionProjectile" parent="." unique_id=657115315 instance=ExtResource("3_620w7")]
+visible = false
+z_index = 11
 position = Vector2(7, 1)
 
 [node name="basePlayerAnimations" type="AnimatedSprite2D" parent="." unique_id=358829851]
@@ -146,6 +151,7 @@ idleState = NodePath("../Idle")
 metadata/_custom_type_script = "uid://bnn1jes0hbbhc"
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1673262173]
+visible = false
 position = Vector2(7, 2)
 
 [connection signal="animation_finished" from="basePlayerAnimations" to="." method="_on_base_player_animations_animation_finished"]
