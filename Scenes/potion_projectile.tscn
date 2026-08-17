@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://diovcen13ugbx"]
+
+[ext_resource type="Script" uid="uid://b1yhyyksd652k" path="res://Scripts/player/potion_projectile.gd" id="1_1et0s"]
+[ext_resource type="Texture2D" uid="uid://b2orsjdv3imfb" path="res://Assets/Sprites/WeaponSprites/Potion.png" id="1_88i03"]
+
+[sub_resource type="Curve2D" id="Curve2D_4owis"]
+_data = {
+"points": PackedVector2Array(0, 0, 50, -100, 0, 0, 0, 0, 0, 0, 100, 0)
+}
+point_count = 2
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ahg1b"]
+radius = 2.0
+height = 6.0
+
+[node name="PotionProjectile" type="Path2D" unique_id=657115315]
+curve = SubResource("Curve2D_4owis")
+script = ExtResource("1_1et0s")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=443153966]
+rotation = -1.1071488
+
+[node name="Area2D" type="Area2D" parent="PathFollow2D" unique_id=1708023387]
+
+[node name="Sprite2D" type="Sprite2D" parent="PathFollow2D/Area2D" unique_id=495584843]
+position = Vector2(-2.9802322e-08, -5.9604645e-08)
+scale = Vector2(0.40000004, 0.3809524)
+texture = ExtResource("1_88i03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Area2D" unique_id=2063373439]
+shape = SubResource("CapsuleShape2D_ahg1b")
