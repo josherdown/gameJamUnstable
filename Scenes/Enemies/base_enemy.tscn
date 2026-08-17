@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cc15ckhabox73"]
 
 [ext_resource type="Texture2D" uid="uid://d0y4bj3t46ado" path="res://Assets/Sprites/EnemySprites/placeholder_base_enemy_sheet.png" id="1_hkymu"]
+[ext_resource type="Script" uid="uid://c2luukgsgucyi" path="res://Scripts/enemy/base_enemy.gd" id="1_t83mw"]
 [ext_resource type="PackedScene" uid="uid://brdkd7p1bkc23" path="res://Scenes/Components/health_component.tscn" id="2_oof5d"]
 [ext_resource type="PackedScene" uid="uid://dfqn72ufwrmr4" path="res://Scenes/Components/hurtbox_component.tscn" id="3_t83mw"]
 
@@ -36,7 +37,8 @@ height = 16.0
 [node name="base_enemy" type="CharacterBody2D" unique_id=1133417226]
 y_sort_enabled = true
 collision_layer = 2
-collision_mask = 22
+collision_mask = 16
+script = ExtResource("1_t83mw")
 
 [node name="base_enemy_animations" type="AnimatedSprite2D" parent="." unique_id=701058808]
 sprite_frames = SubResource("SpriteFrames_3pqe4")
@@ -50,6 +52,8 @@ shape = SubResource("CircleShape2D_tglc7")
 [node name="HealthComponent" parent="Components" unique_id=753096552 instance=ExtResource("2_oof5d")]
 
 [node name="HurtboxComponent" parent="Components" unique_id=296546325 node_paths=PackedStringArray("healthComponent") instance=ExtResource("3_t83mw")]
+collision_layer = 64
+collision_mask = 4
 healthComponent = NodePath("../HealthComponent")
 
 [node name="Hurtbox" type="CollisionShape2D" parent="Components/HurtboxComponent" unique_id=959666751]

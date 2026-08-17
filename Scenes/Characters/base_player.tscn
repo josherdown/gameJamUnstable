@@ -117,16 +117,16 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3pqe4"]
-radius = 2.236068
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oof5d"]
+size = Vector2(12, 15)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3pqe4"]
-radius = 6.0
-height = 16.0
+radius = 8.0
+height = 18.0
 
 [node name="basePlayer" type="CharacterBody2D" unique_id=547233531]
 y_sort_enabled = true
-collision_mask = 25
+collision_mask = 16
 script = ExtResource("1_ufpyv")
 
 [node name="basePlayerAnimations" type="AnimatedSprite2D" parent="." unique_id=358829851]
@@ -134,7 +134,8 @@ sprite_frames = SubResource("SpriteFrames_ahg1b")
 animation = &"Idle"
 
 [node name="playerHitbox" type="CollisionShape2D" parent="." unique_id=339178910]
-shape = SubResource("CircleShape2D_3pqe4")
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_oof5d")
 
 [node name="StateMachine" type="Node" parent="." unique_id=601273616 node_paths=PackedStringArray("startingState")]
 script = ExtResource("3_e1w4v")
@@ -154,6 +155,8 @@ metadata/_custom_type_script = "uid://bnn1jes0hbbhc"
 [node name="HealthComponent" parent="Components" unique_id=753096552 instance=ExtResource("6_620w7")]
 
 [node name="HurtboxComponent" parent="Components" unique_id=296546325 instance=ExtResource("7_u8vnh")]
+collision_layer = 32
+collision_mask = 8
 
 [node name="Hurtbox" type="CollisionShape2D" parent="Components/HurtboxComponent" unique_id=216987383]
 shape = SubResource("CapsuleShape2D_3pqe4")

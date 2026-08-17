@@ -13,7 +13,7 @@ visible = false
 position = Vector2(59.000004, 13)
 scale = Vector2(0.3671875, 0.328125)
 
-[node name="basePlayer" parent="." unique_id=547233531 instance=ExtResource("1_l756w")]
+[node name="basePlayer" parent="." unique_id=547233531 groups=["player"] instance=ExtResource("1_l756w")]
 
 [node name="Camera2D" type="Camera2D" parent="basePlayer" unique_id=1950753822]
 zoom = Vector2(3, 3)

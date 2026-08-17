@@ -25,6 +25,10 @@ window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 mouse_cursor/custom_image="uid://cewrli6wak1sd"
 
+[global_group]
+
+player=""
+
 [input]
 
 moveleft={
@@ -60,6 +64,8 @@ lmbclick={
 2d_physics/layer_3="PlayerDamage"
 2d_physics/layer_4="EnemyDamage"
 2d_physics/layer_5="Environment"
+2d_physics/layer_6="PlayerHurtbox"
+2d_physics/layer_7="EnemyHurtbox"
 
 [physics]
 

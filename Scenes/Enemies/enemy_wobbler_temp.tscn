@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bbdkdpki1co3b"]
 
 [ext_resource type="Texture2D" uid="uid://dkvttx24tj3he" path="res://Assets/Sprites/EnemySprites/temp_wobbler_sheet.png" id="1_fpq7u"]
+[ext_resource type="Script" uid="uid://c27i7qynt33ns" path="res://Scripts/enemy/enemy_wobbler_temp.gd" id="1_yo7xb"]
 [ext_resource type="PackedScene" uid="uid://brdkd7p1bkc23" path="res://Scenes/Components/health_component.tscn" id="2_1f5j0"]
 [ext_resource type="PackedScene" uid="uid://dfqn72ufwrmr4" path="res://Scenes/Components/hurtbox_component.tscn" id="3_yo7xb"]
 
@@ -66,7 +67,8 @@ height = 32.0
 [node name="enemy_wobbler_temp" type="CharacterBody2D" unique_id=198981560]
 y_sort_enabled = true
 collision_layer = 2
-collision_mask = 22
+collision_mask = 16
+script = ExtResource("1_yo7xb")
 
 [node name="Animations" type="AnimatedSprite2D" parent="." unique_id=532380605]
 sprite_frames = SubResource("SpriteFrames_3pqe4")
@@ -83,6 +85,8 @@ shape = SubResource("CircleShape2D_tglc7")
 [node name="HealthComponent" parent="Components" unique_id=753096552 instance=ExtResource("2_1f5j0")]
 
 [node name="HurtboxComponent" parent="Components" unique_id=296546325 instance=ExtResource("3_yo7xb")]
+collision_layer = 64
+collision_mask = 4
 
 [node name="Hurtbox" type="CollisionShape2D" parent="Components/HurtboxComponent" unique_id=450825858]
 shape = SubResource("CapsuleShape2D_tglc7")
